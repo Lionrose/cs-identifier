@@ -15,10 +15,6 @@ This script takes in two inputs:
 
    Must be **named by type** (see the names in the `reference_image` folder). 
 
-   For example, `E2BA461F667E5DB6881FBC1C3442CC86.png` refers to this pet:
-   
-    [![Image](https://static.chickensmoothie.com/pic.php?k=E2BA461F667E5DB6881FBC1C3442CC86&bg=eeeeee)](https://static.chickensmoothie.com/pic.php?k=E2BA461F667E5DB6881FBC1C3442CC86&bg=eeeeee)
-
    These images must have a **transparent background, and saved without items**. For example, 
    * DO: [Pet without items](https://www.chickensmoothie.com/pet/40773414&trans=1&noitems.jpg)
    
