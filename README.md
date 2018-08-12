@@ -18,7 +18,7 @@ This script takes in two inputs:
 1. Input file: Pet IDs separted by lines (e.g. example_input.txt).
 2. Reference images:
 
-   Must be **named by type** (see the names in the `reference_image` folder).
+   Must be **named by key** (see the names in the `reference_image` folder).
 
    These images must have a **transparent background, and saved without items**. For example,
    * DO: [Pet without items](https://www.chickensmoothie.com/pet/40773414&trans=1&noitems.jpg)
@@ -34,7 +34,7 @@ This script takes in two inputs:
 ## Outputs
 The output file will be named `${INPUT_NAME}_out.txt`.
 
-Each line contains the `ID` and `TYPE` separated by a comma
+Each line contains the `ID` and `KEY` separated by a comma
 
 e.g.
 ```
