@@ -94,7 +94,7 @@ def main(args):
           errors.append((pet_id, e))
           pet_type = ERROR_TYPE
 
-        w.write("%s,%s" % (pet_id, pet_type))
+        w.write("%s,%s\n" % (pet_id, pet_type))
 
   if errors:
     print("List of all errors")
