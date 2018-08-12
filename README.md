@@ -1,4 +1,4 @@
-# CS Pet Identifier (LITERALLY NO CODE WRITTEN BUT HERE'S THE DOCUMENTATION)
+# CS Pet Identifier
 
 ## Required
 
