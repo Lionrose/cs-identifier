@@ -1,5 +1,10 @@
 # CS Pet Identifier (LITERALLY NO CODE WRITTEN BUT HERE'S THE DOCUMENTATION)
 
+## Required
+
+* [Python >= 3.5](https://www.python.org/downloads/)
+* [Pillow (for image processing)](https://pypi.org/project/Pillow/)
+
 ## Run with example data
 ```
 python id.py example_input.txt
@@ -36,15 +41,3 @@ e.g.
 40773414,E2BA461F667E5DB6881FBC1C3442CC86
 51218734,8CF714DA1859489A09C1C3F374935782
 ```
-
----
-
-## TMI
-In case you're bored and want to see how this script works, read on.
-
-The first thing this script does is read the reference images, and generate mini versions of the images (+ crops out the part that says `__'s pet`). This speeds things up a bit, and eases memory usage, but honestly I don't know if its significantly helpful. But its there in case you want to identify each pets on CS or something. 
-
-These images are saved to a dictionary that maps `image_values -> PET_TYPE`. It is assumed that the image name is some form of `PET_TYPE.png` or `PET_TYPE` or `PET_TYPE.jpg`.
-
-Next, it goes through the list of pets from the input list. Each pet's image is downloaded, does the same shrinking + croppying. If the new image is found in the dictionary, then it retrieves the pet type. If not found, then it saves the pet type as `UNKNOWN`.
-
