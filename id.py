@@ -12,9 +12,41 @@ UNKNOWN_key = "UNKNOWN"
 ERROR_key = "ERROR"
 
 def crop(img):
-  """Remove part of the pet that says "___'s pet"""
+  """Remove part of the pet that says "___'s pet and transparent edges."""
   w, h = img.size
-  return img.crop((0, 0, w, h-9))
+
+  h = h - 9
+  img = img.crop((0, 0, w, h))
+
+  # Get cropping border
+  left = w
+  top = h
+  right = 0
+  bottom = 0
+
+  img_data = img.getdata()
+  # Loop from left->right and top->bottom to get the left/top cropping borders.
+  for i_h in range(h):
+    for i_w in range(w):
+      if img_data[i_w + i_h * w] == (0, 0, 0, 0):
+        continue
+      top = min(top, i_h)
+      left = min(left, i_w)
+      break
+
+  # Loop from right->left and bottom->top to get the right/bottom cropping
+  # borders.
+  for i_h in range(h - 1, 0, -1):
+    for i_w in range(w - 1, 0, -1):
+      if img_data[i_w + i_h * w] == (0, 0, 0, 0):
+        continue
+      bottom = max(bottom, i_h)
+      right = max(right, i_w)
+      break
+
+  img = img.crop((left, top, right, bottom))
+  return img
+
 
 
 def download_image(img_url):
